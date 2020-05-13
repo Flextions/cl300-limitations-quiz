@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Challenger 300 Limitations Quiz</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+  
+<div id="main-container">
+
+  <div id="container-title">
+    <h2>Challenger 300 Limitations</h2>
+    <h1>10 Minute Quiz</h1>
+    <h3>Just the numbers!</h3>
+    <div class="lower-third">
+      <button onclick="show_instructions()">Instructions</button>
+      <button onclick="show_high_score()">Hi Score</button>
+      <button onclick="GO()">GO!</button>
+    </div>
+  </div>
+
+  <div id="container-instructions">
+    Quiz Instructions:</br>
+    <p>Complete the quiz within 10 minutes.
+    <p>If you are sucessful you should</br>
+      continue to try to improve on your best time.<br>
+      <button onclick="close_instructions()">close instructions</button>
+  </div>
+
+  <div id="container-high-score">
+    Best Score:</br>
+    <p><b>Not yet implemented</b></br>
+      The best score that you have recorded</br>
+      on this device is:
+      <span id="high-score"></span>
+      <button onclick="close_high_score()">close</button>
+
+  </div>
+
+  <!-- MAIN QUIZ AREA -->
+  <div id="container-quiz">
+
+    <div id="quiz-top">
+      <div class="gauge-container"><!-- BEGIN PERCENT COMPLETE GAUGE -->
+        <svg width="150" height="120" viewBox="0 0 150 120">
+    
+          <line x1="0" y1="50" x2="0" y2="57" style="stroke-width: 3; stroke: red; transform: translate(60px, 60px) rotate(161deg);"/>
+          
+          //http://xahlee.info/js/svg_circle_arc.html//
+          <path class= "gauge-arc" d=" M 117 60 A 57 57 0 1 1 41 6" />
+          
+          <line x1="110" y1="60" x2="117" y2="60" style="stroke-width: 3; stroke: seashell;"/>
+          
+          <text id="percent-box" x="70" y="35" dx="0" dy="0.66em" class="gauge-message">67.0</text>
+          
+          <text x="70" y="15" dx="0" dy="0.66em" class="gauge-message thrSet">COMPLETE</text>
+          
+          <path id="gauge-arrow" class="green-arrow"
+          d=" m 0 0 h 2 v 45 h 1 l -3,8 -3,-8 h 1 v -45 Z"
+          />
+          
+        </svg>
+        
+      </div><!-- END PERCENT COMPLETE GAUGE -->
+
+      <div id="clock-container"><!-- BEGIN CLOCK COUNTER -->
+        <div id="flt-container">
+          <span>ET</span>
+          <span id="elapsed-time">00:00</span>
+          <span></span>
+          <span>MIN&nbsp;SEC</span>
+        </div>
+        <div id="utc-container">
+          <span>UTC</span>
+          <span id="day-month">14 08</span>
+          <span id="year">04</span>
+          <span style="font-size: 1.2vmin;">&nbsp;&nbsp;DAY MONTH YR</span>
+    
+        </div>
+        <div id="chr-container">
+          <span>RT</span>
+          <span id="remaining-time">00:00</span>
+          <span></span>
+          <span>MIN&nbsp;&nbsp;SEC</span>
+        </div>
+      </div><!-- END CLOCK COUNTER -->
+
+      <div id="section-ref-info-container"><!-- BEGIN SECTION AND REFERENCE BOX -->
+        <div id="question_section">Section Head goes here</div>
+
+        <div id="question_ref">reference goes here</div>
+
+        <div id="info">type answer and press ENTER</div>
+      </div><!-- BEGIN SECTION AND REFERENCE BOX -->
+
+      </div> <!-- end of quiz top div -->
+
+      
+    
+    <hr>
+
+    <div id="question_box">question goes here</div>
+      <input type="number" id="answer_box" size="8" tabindex="0">
+      <div class="lower-third">
+        <button onclick="quit_quiz()">Quit!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
